@@ -1,0 +1,40 @@
+\chapter{Concluzii}
+\pagestyle{fancy}
+
+\section{Analiza rezultatelor obținute}
+Aplicația realizată îndeplinește obiectivele setate la început, fiind un instrument de analiză detaliată a unui text cu specific financiar.\\
+Reușind integrarea modelelor de procesare de limbaj natural în aplicația web, aceasta oferă, pe lângă funcționalități generale ale unei aplicații web, analiza sentimentelor financiare dintr-un text, 
+sumarizarea textului și extragerea cuvintelor cheie.\\
+
+Unul dintre obiectivele setate la început pentru aplicație era ca utilizatorul să poată lua o decizie financiară informată. 
+Cu ajutorul analizei sentimentelor financiare, sunt obținute scoruri pentru fiecare dintre sentimentele negativ, neutru, pozitiv și acestea pot influența decizia utilizatorului.\\
+De multe ori, un scor pozitiv ridicat poate fi perceput ca un lucru bun, la fel cum un scor negativ ridicat poate fi perceput ca un lucru rău.
+Pentru cazurile excepționale când un scor negativ ridicat poate însemna și un lucru benefic pentru investitor, acesta trebuie determinat din context.\\
+
+Textele analizate pot avea diferite dimensiuni și posibil, doar anumite părți sunt interesante pentru investitor. Deci dimensiunea unui text e măsurată în timp și se dorește un răspuns într-un timp scurt.\\
+Autorul scrie în~\cite{LengthOfAnArticle} următoarea afirmație: {\it "If you are looking for a good rule of thumb, write content between 1,500 and 3,000 words."}. Continuând apoi cu o analiză a timpului
+petrecut citind un anumit număr de cuvinte~\cite{TimePerWords}, considerând o viteză medie, pentru aproximativ 2000 de cuvinte o persoană va petrece aproximativ 6.7 minune per articol.\\
+
+A citi nu e nici pe de parte un lucru rău, doar că aici se doresc informații în timp cât mai scurt pentru că se urmărește momentul potrivit. Așadar, intervine sumarizarea textului, alt obiectiv al acestei aplicații.
+Utilizatorul va reduce timpul petrecut pentru citirea unui articol, extragând ideile principale, astfel încât să își poată da seama din context de motivul scorului sentimentelor rezultat.\\
+
+Tot în acest scop, aplicația realizează și extragerea cuvintelor cheie, pentru a oferi o privire de perspectivă asupra a ce se întâmplă în acest moment.\\
+Cu rezultatele obținute, utilizatorul poate vedea evoluția interesului general pentru un anumit subiect, cele mai populare 10 subiecte și anumite definiții pentru cuvintele cheie cheie extrase.\\
+
+Pe lângă aceste funcționalități, aplicația web se concentrează și pe partea de securitate; întrucât utilizatorul poate să își salveze documente în istoricul personal, accesul altor persoane cu intenții rele trebuie să fie restricționat.
+Acest lucru e realizat cu ajutorul tokenilor, rutelor protejate și parolele unice.
+
+\newpage
+
+\section{Dezvoltări și îmbunătățiri ulterioare}
+Pentru partea de îmbunătățiri ulterioare, în primul rând, o funcționalitate necesară consider că ar fi o analiză a sentimentelor pe text, pe anumite părți din text selectate de utilizator.\\
+Spre exemplu să existe 2 cursoare, unul pentru a fi poziționat la începutul textului care se dorește a fi analizat și alt cursor pentru a fi poziționat la finalul textului. 
+Momentan, în aplicație, sentimentul financiar este obținut pentru tot textul analizat, așa că o îmbunătățire ar fi selectarea unui sub-text, spre exemplu, frază sau paragraf.\\
+
+Poate fi introdus un mod de vizitator unde un utilizator neautentificat poate să analizeze un număr fix de articole, dar pentru stocarea rezultatelor sau vizualizarea graficelor să fie necesară autentificarea. \\
+Tot pe partea de autentificarea, poate fi utilă și logarea în aplicație folosing Google.\\
+
+O altă îmbunătățire care poate fi adusă poate fi reprezentată de sugestia de articole relevante de pe Internet pentru cuvintele cheie sau expresiile identificate.\\
+
+De asemenea, se poate introduce și varianta de analizare a unui text introducând doar URL-ul acestuia. Pentru a fi posibil acest lucru, modelul de analiză ar trebui să accepte
+un text întreg și să nu fie limitat la un număr fix de tokeni. O posibilă soluție poate fi găsită aici~\cite{TransformersLongText}.

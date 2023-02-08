@@ -1,0 +1,66 @@
+\chapter{Obiectivele Proiectului}\label{ch:obiective}
+\pagestyle{fancy}
+
+\section{Obiectiul principal}
+
+Obiectivul principal al acestui proiect este de a crea un instrument de analiză amănunțită a unui text financiar. În acest domeniu, cu atenția orientată mai ales spre investiții,
+oamenii urmăresc continuu un moment potrivit și sunt predispuși în a lua decizii rapide care îi pot sau nu afecta în viitor.
+Deciziile pot fi influențate de mai mulți factori: informațiile transmise prin știri sau articole, cunoștințele precare, etc.
+Cu ajutorul acestei aplicații, utilizatorii pot înțelege mai rapid ce este transmis într-un articol voluminos pentru a putea să își formeze o părere informată înainte de a lua o decizie.
+Dat fiind faptul că datele de intrare care vor fi folosite pentru a fi analizate în această aplicație sunt majoritatea știri, în aplicație vor fi integrate module care se vor ocupa de înțelegerea și procesarea limbajului natural.
+
+
+
+\section{Obiective secundare}
+Unul dintre cele mai importante obiective secundare este modul în care este prezentată aplicația utilizatorului final.
+Statisticile arată că utilizatorii își doresc, în proporție de 49\%, un design minimalist, intuitiv, cu informațiile principale în secțiuni cât mai ușor accesibile.
+Utilizatorul ar trebui să aibă într-un singur loc toate informațiile rezultate în urma analizei unui text financiar, pentru a putea face ușor conexiuni sau comparații.
+Pe lângă acestea, utilizatorul poate vedea evoluția pe zile a aparițiilor comune cuvintelor cheie identificate în textul său.\\
+
+Al doilea obiectiv secundar este reprezentat de feedback-ul pe care îl oferă aplicația utilizatorului, prin indicațiile pentru ce trebuie introdus în anumite câmpuri,
+notificările primite ca rezultat al anumitor requesturi ale utilizatorului, email de confirmare după crearea unui cont nou, etc.\\
+Pentru corectitudinea datelor, dar și pentru protecția lor, utilizatorul primește feedback vizual atunci când datele introduse nu au formatul corect sau numărul de caractere nu este în limita acceptată.\\
+De asemenea, utilizatorul este notificat, în cazul introducerii sau modificării datelor personale precum numele de utilizator sau email dacă sunt deja utilizate. \\
+
+Al treilea obiectiv secundar este securitatea aplicației, care va fi asigurată în următoarele moduri: 
+\begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item La crearea unui cont nou, parola salvată în baza de date va fi trecută printr-o funcție de hashing SHA512, generând un output unic de 512 biți.
+    \item După crearea cu succes a contului, la logare, utilizatorul va avea un token de acces pentru a putea accesa anumite resurse
+    \item Accesul permis doar în anumite pagini ale aplicației, folosind rutele protejate
+\end{itemize}
+\ \\
+
+Al patrulea obiectiv secundar este reprezentat de abilitatea utilizatorului de modificare a anumitor date din cont, fie ele personale, precum datele contului, strict legate de analizele pe text, adică ce texte analizate 
+dorește să pastreze în istoricul personal.
+Pentru datele persoanale, singurele restricții sunt impuse pentru datele care identifică un utilizator: username-ul și email-ul; acestea trebuie să fie unice atunci când există o încercare de actualizare a datelor, altfel 
+utilizatorul va fi notificat cu un mesaj specific erorii care a apărut în procesul de salvare a datelor.
+Pentru partea de salvare în istoricul personal al analizelor efectuate, utilizator poate să aleagă dacă salvează o analiză în istoric, altfel rezultatele sunt decartate.
+\\
+
+Al cincilea obiectiv secundar este realizat prin integrarea modelelor de procesare de limbaj natural pentru a fi folosite cu următoarele scopuri:
+\begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item Analiza textului prin extragerea sentimentelor financiare
+    \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item După procesarea textului financiar, rezultatul analizei constă într-un scor procentual obținut pentru sentimentele negativ, neutru și pozitiv
+    \end{itemize}
+    \item Sumarizarea textului
+    \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item Pentru că nu întotdeauna un sentiment pozitiv înseamnă același lucru și în realitate, pentru mai multă claritate utilizatorul va avea extrase ideile principale din textul analizat
+    \end{itemize}    
+    \item Extragerea de cuvinte cheie
+    \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item Rezultatul acestei analize a textului constă în cuvintele cheie identificate în text ce vor fi folosite ulterior pentru generarea graficelor de popularitate, la cerința utilizatorului și afișarea definițiilor
+    \end{itemize} 
+\end{itemize}
+\ \\
+
+Alt șaselea obiectiv secundar este de a oferi utilizatorului posibilitatea de a vedea un trending intern, constituit din top 10 cele mai populare cuvinte cheie sau fraze extrase din textele analizate într-o anumită perioadă de timp
+selectată de el, dar și evoluția anumitor cuvinte cheie introduse de utilizator. Toate aceste informații vor fi afișate într-un mod cât mai ușor de înțeles de utilizator, conținând informațiile relevante.
+Pentru cuvintele cheie extrase, se vor afișa definițiile acestora.\\
+
+Pe lângă toate acestea, aplicația trebuie să fie extensibilă, pentru a putea adăuga funcționalități ulterioare. Proiectarea acesteia trebuie să fie în așa fel încât modulele sau componentele actuale să nu fie afectate de adăugarea de funcționalitate nouă.
